@@ -52,6 +52,7 @@ class ImageSimulator_UTR():
         try:
             _, path, _ = imp.find_module('ImSimpyA')
             path = path[0:34]+'/'
+            print(path)
 
         except:
             print('path to pyETC can not be found.')
@@ -109,7 +110,7 @@ class ImageSimulator_UTR():
             from pyETC.pyETC import etc
             try:
                 _, path_etc, _ = imp.find_module('pyETC/pyETC')
-                path_etc = path_etc[0:32]
+                path_etc = path_etc[0:32]+'/'
                 print(path_etc)
             except:
                 print('path to pyETC can not be found.')
@@ -574,7 +575,8 @@ class ImageSimulator_UTR():
                 self.image[j1:j2, i1:i2] += data[:nj, :ni]
 
         # ne pas ajouter des étoiles sur pix ref
-        ref = np.loadtxt(self.path + self.information['PixRefFile']).astype(int)
+        ref =fits.getdata(self.path + self.information['PixRefFile'])
+
         im = np.ndarray.flatten(self.image)
         im[ref] = 0
 
@@ -1169,7 +1171,8 @@ class ImageSimulator_UTR():
     def applyCreatePersistance(self,A,k):
         """ Creation de la carte de persistance à enregistrer pour l'exposition suivante en mV"""
         Nfin = int(np.round(self.information['Nfin']))
-        actif = np.loadtxt(self.path + self.information['PixActifFile']).astype(int)
+
+        actif = fits.getdata(self.path + self.information['PixActifFile'])
 
 
         if k == Nfin-1:
@@ -1191,7 +1194,6 @@ class ImageSimulator_UTR():
     def applyPersistance(self,k,A):
         """ Application de la carte de persistance à appliquer (exposition précédente) déjà en electrons"""
 
-        #actif = np.loadtxt('/home/alix/anaconda3/dcorre-ImSimpyA-42ac6cb/ImSimpyA/data/PixViolet.txt').astype(int)
         path = '/home/alix/anaconda3/simu/ImSimpyA/data/Persistance/'
         nom = self.information['nomPersistance']
         Treset = self.information['Treset']  # 5*60  # temps depuis le premier reset
@@ -1327,7 +1329,8 @@ class ImageSimulator_UTR():
         # FlatField calculé sur le det ALFA
         FlatField = fits.getdata(self.path + '/data/' + self.information['FlatFieldFile'])
 
-        ref = np.loadtxt(self.path +self.information['PixRefFile']).astype(int)
+
+        ref = fits.getdata(self.path + self.information['PixRefFile'])
         FlatField = np.ndarray.flatten(FlatField)  # sinon pb lors de la correction par les pixels de ref, leur non linéarité ne peux pas être calibrée par illumination : pas sensible light
         FlatField[ref] = 1
         FlatField[np.argwhere(FlatField <= 0)] = 1
@@ -1348,7 +1351,8 @@ class ImageSimulator_UTR():
 
         NL = fits.getdata(self.path + '/data/NonLinearity/' + self.information['NonLinearityFile'])
 
-        ref = np.loadtxt(self.path +self.information['PixRefFile']).astype(int)
+
+        ref = fits.getdata(self.path + self.information['PixRefFile'])
         NL = np.ndarray.flatten(NL)  # sinon pb lors de la correction par les pixels de ref, leur non linéarité ne peux pas être calibrée par illumination : pas sensible light
         NL[ref] = 0
 
@@ -1394,7 +1398,8 @@ class ImageSimulator_UTR():
 
         DC = np.reshape(fits.getdata(self.path + '/data/DarkCurrent/' + self.information['DarkFile']), [2048, 2048])
 
-        ref = np.loadtxt(self.path +self.information['PixRefFile']).astype(int)
+
+        ref = fits.getdata(self.path + self.information['PixRefFile'])
         dc = np.ndarray.flatten(DC)
         dc[ref] = np.median(dc)
 
@@ -1439,7 +1444,8 @@ class ImageSimulator_UTR():
         sky_image = np.ones([2048, 2048]) * bcgr  # on considère le fond de ciel constant sur le détecteur : ligne Alix
 
         # ne pas ajouter le bruit de font de ciel aux pix de reférence
-        ref = np.loadtxt(self.path +self.information['PixRefFile']).astype(int)
+
+        ref = fits.getdata(self.path + self.information['PixRefFile'])
         sky_f = np.ndarray.flatten( sky_image)  # sinon pb lors de la correction par les pixels de ref, leur non linéarité ne peux pas être calibrée par illumination : pas sensible light
         sky_f[ref] = 0
         sky_image = np.reshape(sky_f, [2048, 2048])
@@ -1472,8 +1478,7 @@ class ImageSimulator_UTR():
         im = np.ndarray.flatten(A)
         im[np.argwhere(im < 0)] = 0
 
-        actif = np.loadtxt(self.path +self.information['PixActifFile']).astype(int)
-
+        actif = fits.getdata(self.path + self.information['PixActifFile'])
         image = im[actif]
         av = A
         image= np.reshape(image, [2040, 2040])
@@ -1664,7 +1669,7 @@ class ImageSimulator_UTR():
         sat = (satu - offset) * 10
         im = np.ndarray.flatten(A)
 
-        actif = np.loadtxt(self.path +self.information['PixActifFile']).astype(int)
+        actif = fits.getdata(self.path + self.information['PixActifFile'])
         a = np.intersect1d(actif, np.argwhere(im > 1.1 * sat))
         im[a] = 1.1 * sat[a]
         av = im

@@ -36,8 +36,7 @@ class etc:
         """ Class constructor """
 
         try:
-            _, path, _ = imp.find_module("pyETC/pyETC")
-            path = path[0:32]
+            _, path, _ = imp.find_module("pyETC")
         except:
             print("path to pyETC can not be found.")
 

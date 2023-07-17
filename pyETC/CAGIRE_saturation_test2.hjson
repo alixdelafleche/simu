@@ -233,9 +233,9 @@
 
 
 #pixels de référence 
-"PixRefFile":/data/ref_test.txt
+"PixRefFile":data/ref_test.fits
 
 #pixels actifs
-"PixActifFile":/data/PixViolet.txt
+"PixActifFile":data/PixViolet.fits
 
 } 

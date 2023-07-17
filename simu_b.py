@@ -165,8 +165,3 @@ _, path, _ = imp.find_module('ImSimpy')
 SaveFitComplet(tabCos, nom, 'nbframes', str(len(Nframes)-1), 3, path=path + '/data/Cosmics/')
 
 '''
-
-
-
-
-
