@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f1c6c04-9f2d-44ef-8872-81a771680a51" name="Changes" comment="commit simu" />
+    <list default="true" id="7f1c6c04-9f2d-44ef-8872-81a771680a51" name="Changes" comment="deuxieme commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2STPxZJ6UP0MDgs6WNhzwQKL0br" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -213,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689597820438</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="commit simu">
+      <option name="closed" value="true" />
+      <created>1689598467148</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689598467148</updated>
+    </task>
+    <task id="LOCAL-00018" summary="deuxieme commit">
+      <option name="closed" value="true" />
+      <created>1689598581668</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689598581668</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -273,6 +294,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Premier commit" />
     <MESSAGE value="commit simu" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit simu" />
+    <MESSAGE value="deuxieme commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="deuxieme commit" />
   </component>
 </project>
