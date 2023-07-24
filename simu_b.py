@@ -31,7 +31,7 @@ nomrampe=  'test_propre'       # Nom à donner à la rampe simulée
 
 AddGRB =True                   # si l'on ajoute un GRB simulé (True) ou non (False)
 tdeb_obs = 300                 # Si GRB : temps du début de l'observationaprès détection du sursaut
-cheminGRB ='/home/alix/anaconda3/dcorre-ImSimpy-42ac6cb/ImSimpy/GRB90423_J.txt'  # chemin du GRB simulé dans la base de donnée (coordonnée et magnitude en fonction du temps)
+cheminGRB ='/home/alix/anaconda3/simu/GRBs/GRB90423_J.txt'  # chemin du GRB simulé dans la base de donnée (coordonnée et magnitude en fonction du temps)
 
 nomPersistance =  'carte_persistance.fits'              # nom du fichier des pixels saturés de l'acquition précédente si persistance
 Treset = 0                     #délai entre l'acquisition et la précédente (depuis le premier reset)
