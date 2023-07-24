@@ -113,3 +113,8 @@ Le choix des effets que l'on peut simuler ou modifier pour la simulation de CAGI
 
 ```
 Ce fichier permet ainsi de sélectionner les effets à simuler grâce au code ImSimpyA.py
+
+## Modifications par rapport au simulateur d'origine 
+
+La principale adaptation concerne l'ajout d'une boucle dans le simulateur d'image, afin de créer des rampes et non pas des images seules.   
+Les fonctions de ImSimpy `applyFlatfield`, `AddObjectToList`, `applyPersistance`, `addCosmic Rays`, `applyCrossTalk`, `applyNonLinearity`, `applyCreatePersistance` et `applySaturation` ont été modifiées ou ajoutées.
