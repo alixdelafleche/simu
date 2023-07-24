@@ -175,14 +175,10 @@
 #add sky background?
 "background" : yes
 
-#apply bleeding effect?
-"bleeding" : no
 
 #add readout time?
 "readoutNoise":yes
 
-#add digitisation noise?
-"digiNoise" : no
 
 #add dark current?
 "darkCurrent" : yes
@@ -194,7 +190,7 @@
 "SaturationFile":saturation_1V.fits
 
 #Add CrossTalk?
-"CrossTalk" : no
+"CrossTalk" : yes
 "CrossTalkFile": Crosstalk/crosstalk.fits
 
 #convert to ADU
@@ -205,10 +201,6 @@
 "nonlinearity": yes
 "NonLinearityFile": gamma_1V_electrons.fits
 
-#Vignetting effect
-"Vignetting": no
-# Path starts at ImSimpy/data/Vignetting/
-"VignettingFile": CAGIRE_saturation/Vignetting_vis.fits
 
 #FlatField effect
 "FlatField": yes
