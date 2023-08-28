@@ -29,7 +29,7 @@ RA_image = 214.477             # Coordonnées de l'observation RA : 214.477 ou 1
 DEC_image = -45.411            # Coordonnées de l'observation DEC :-45.411 ou 18.167 ou 33.71224656 par ex. Ne sera pas utilisé si AddGRB = True
 nomrampe=  'test_propre'       # Nom à donner à la rampe simulée
 
-AddGRB =True                   # si l'on ajoute un GRB simulé (True) ou non (False)
+AddGRB =False                   # si l'on ajoute un GRB simulé (True) ou non (False)
 tdeb_obs = 300                 # Si GRB : temps du début de l'observationaprès détection du sursaut
 cheminGRB ='/home/alix/anaconda3/simu/GRBs/GRB90423_J.txt'  # chemin du GRB simulé dans la base de donnée (coordonnée et magnitude en fonction du temps)
 

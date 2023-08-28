@@ -191,10 +191,10 @@ class ImageSimulator_UTR():
             self.Addsources = True
         else:
             self.Addsources = False
-        if self.config['bleeding'].lower() == 'yes':
-            self.bleeding = True
-        else:
-            self.bleeding = False
+        #if self.config['bleeding'].lower() == 'yes':
+        #    self.bleeding = True
+        #else:
+        #    self.bleeding = False
         if self.config['cosmicRays'].lower() == 'yes':
             self.cosmicRays = True
         else:
@@ -340,7 +340,7 @@ class ImageSimulator_UTR():
 
         self.booleans = dict(shotNoiseoise=self.shotNoise,
                              addsources=self.Addsources,
-                             bleeding=self.bleeding,
+                             #bleeding=self.bleeding,
                              cosmicRays=self.cosmicRays,
                              cosmetics=self.cosmetics,
                              background=self.background,
@@ -1680,7 +1680,7 @@ class ImageSimulator_UTR():
 
         image = np.ndarray.flatten(signal.convolve2d(im, ct, mode='same', boundary='fill'))
 
-        refct = np.loadtxt('/home/alix/anaconda3/dcorre-ImSimpyA-42ac6cb/ImSimpyA/data/ref_ct.txt').astype(int)
+        refct = np.loadtxt('/home/alix/anaconda3/simu/ImSimpyA/data/ref_ct.txt').astype(int)
         image[refct] = np.ndarray.flatten(im)[refct]
 
         A = np.reshape(image, [2048, 2048])
@@ -1736,15 +1736,30 @@ class ImageSimulator_UTR():
             print("\tADD OBJECTS")
             self.addObjects(self.image,1)
 
+            '''plt.figure('init')
+            plt.imshow(self.image, vmin= 0, vmax = 50) #np.quantile(self.image, 0.1), vmax=np.quantile(self.image, 0.8))
+            plt.colorbar()
+            plt.show()'''
+
         if self.background:
             # if self.config['verbose'] == 'True': print ("Add Sky background")
             print("\tAdd Sky background")
             self.applySkyBackground()
 
+            '''plt.figure('back')
+            plt.imshow(self.image, vmin = 180, vmax = 205) # vmin=np.quantile(self.image, 0.1), vmax=np.quantile(self.image, 0.8))
+            plt.colorbar()
+            plt.show()'''
+
         if self.FlatField:
             # if self.config['verbose'] == 'True': print ("Add FlatField")
             print("\tAdd FlatField")
             self.applyFlatField()
+
+            '''plt.figure('flatfield')
+            plt.imshow(self.image, vmin = 180, vmax=205) #vmin=np.quantile(self.image, 0.05), vmax=np.quantile(self.image, 0.95))
+            plt.colorbar()
+            plt.show()'''
 
         if self.darkCurrent:
             # if self.config['verbose'] == 'True': print ("Add dark current")
@@ -1812,10 +1827,20 @@ class ImageSimulator_UTR():
                 print("\tAdd cosmetics")
                 A=self.addCosmetics(A)
 
+            '''plt.figure('non lin')
+            plt.imshow(A, vmin = 180, vmax=205) #vmin=np.quantile(A, 0.05), vmax=np.quantile(A, 0.95))
+            plt.colorbar()
+            plt.show()'''
+
             if self.ADU:
                 # if self.config['verbose'] == 'True': print ("electrons2adu")
                 print("\telectrons2adu")
                 A=self.electrons2ADU(A)
+
+                '''plt.figure('ADU')
+                plt.imshow(A, vmin=np.quantile(A, 0.05), vmax=np.quantile(A, 0.95))
+                plt.colorbar()
+                plt.show()'''
 
             dF = A
 
@@ -1860,6 +1885,11 @@ class ImageSimulator_UTR():
                 # if self.config['verbose'] == 'True': print ("Apply Saturation")
                 print("\tApply Saturation")
                 F[k] =self.applySaturation(F[k])
+
+                plt.figure('SAT')
+                plt.imshow(F[k], vmin=np.quantile(F[k], 0.05), vmax=np.quantile(F[k], 0.95))
+                plt.colorbar()
+                plt.show()
 
             plt.figure('rampe')
             # plt.plot(np.median(F,axis=(1,2)))
