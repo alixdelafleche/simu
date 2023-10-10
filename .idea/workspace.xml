@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f1c6c04-9f2d-44ef-8872-81a771680a51" name="Changes" comment="ajout banque GRBs">
+    <list default="true" id="7f1c6c04-9f2d-44ef-8872-81a771680a51" name="Changes" comment="mise a jour pixels ref">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImSimpyA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImSimpyA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImSimpyA/data/catalog/SourcesCatalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ImSimpyA/data/catalog/SourcesCatalog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImSimpyA/data/catalog/SourcesToAdd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ImSimpyA/data/catalog/SourcesToAdd.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImSimpyA/data/ref_test.fits" beforeDir="false" afterPath="$PROJECT_DIR$/ImSimpyA/data/ref_test.fits" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyETC/CAGIRE_saturation_test2.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/pyETC/CAGIRE_saturation_test2.hjson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simu_b.py" beforeDir="false" afterPath="$PROJECT_DIR$/simu_b.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2STPxZJ6UP0MDgs6WNhzwQKL0br" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -277,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690184428235</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="mise a jour pixels ref">
+      <option name="closed" value="true" />
+      <created>1693215322076</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1693215322076</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -339,6 +344,7 @@
     <MESSAGE value="commit simu" />
     <MESSAGE value="deuxieme commit" />
     <MESSAGE value="ajout banque GRBs" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout banque GRBs" />
+    <MESSAGE value="mise a jour pixels ref" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise a jour pixels ref" />
   </component>
 </project>
